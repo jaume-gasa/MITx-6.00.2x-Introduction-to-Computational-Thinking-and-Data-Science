@@ -1,0 +1,624 @@
+0
+00:00:00,670 --> 00:00:01,790
+JOHN GUTTAG: Hello again.
+
+1
+00:00:01,790 --> 00:00:07,320
+This is John Guttag welcoming you back to another exciting segment in 600X.
+
+2
+00:00:07,320 --> 00:00:11,160
+We ended the last segment looking at ways in which we can use the standard
+
+3
+00:00:11,160 --> 00:00:14,200
+deviation of a normal distribution to construct confidence
+
+4
+00:00:14,200 --> 00:00:15,820
+intervals and levels.
+
+5
+00:00:15,820 --> 00:00:18,680
+We observed that normal distributions are quite common.
+
+6
+00:00:18,680 --> 00:00:22,590
+If we were to plot the heights of all the students in 600, or for that
+
+7
+00:00:22,590 --> 00:00:25,970
+matter, the people in this large stadium, we would almost surely
+
+8
+00:00:25,970 --> 00:00:29,010
+produce something close to a normal distribution.
+
+9
+00:00:29,010 --> 00:00:32,259
+If one looks at the experimental errors in repeated trials of an
+
+10
+00:00:32,259 --> 00:00:36,470
+experiment, they are typically normally distributed around zero.
+
+11
+00:00:36,470 --> 00:00:39,900
+I guess, around zero if the experiment's well-conducted.
+
+12
+00:00:39,900 --> 00:00:43,180
+Otherwise, the mean is less obvious.
+
+13
+00:00:43,180 --> 00:00:46,890
+If I plot the average temperatures for almost any place in the world--
+
+14
+00:00:46,890 --> 00:00:49,260
+this happens to be in the United States--
+
+15
+00:00:49,260 --> 00:00:52,030
+it will be close to normally distributed as well.
+
+16
+00:00:52,030 --> 00:00:56,200
+It is important to remember, however, that not all distributions are normal.
+
+17
+00:00:56,200 --> 00:00:58,550
+Consider rolling a single die.
+
+18
+00:00:58,550 --> 00:01:03,160
+As we've talked about before, perhaps more than you enjoyed, each of the six
+
+19
+00:01:03,160 --> 00:01:05,260
+outcomes is equally probable.
+
+20
+00:01:05,260 --> 00:01:09,630
+If one were to roll a single die a million times and create a histogram
+
+21
+00:01:09,630 --> 00:01:12,470
+showing how often each number came up, each column will be
+
+22
+00:01:12,470 --> 00:01:13,985
+almost the same height.
+
+23
+00:01:13,985 --> 00:01:17,680
+If one were to plot the probability of each possible lottery number being
+
+24
+00:01:17,680 --> 00:01:21,750
+chosen, it too would be a flat line at one divided by the range of the
+
+25
+00:01:21,750 --> 00:01:23,310
+lottery numbers.
+
+26
+00:01:23,310 --> 00:01:27,980
+As we've discussed before, such distributions are called uniform.
+
+27
+00:01:27,980 --> 00:01:32,490
+Uniform distributions occur frequently in games devised by humans but only
+
+28
+00:01:32,490 --> 00:01:37,580
+rarely in nature, and are not usually useful for modeling complex systems.
+
+29
+00:01:37,580 --> 00:01:41,180
+They can be easily characterized by single parameter--
+
+30
+00:01:41,180 --> 00:01:43,030
+their range.
+
+31
+00:01:43,030 --> 00:01:46,470
+In contrast to uniform distributions, exponential
+
+32
+00:01:46,470 --> 00:01:49,520
+distributions occur quite commonly.
+
+33
+00:01:49,520 --> 00:01:54,820
+They're often, for example, used to model inter-arrival times--
+
+34
+00:01:54,820 --> 00:01:58,760
+the frequency with which autos enter a highway, or with
+
+35
+00:01:58,760 --> 00:02:01,870
+web pages are requested.
+
+36
+00:02:01,870 --> 00:02:05,410
+They're important because they're the only continuous distribution that has
+
+37
+00:02:05,410 --> 00:02:08,870
+the memoryless property.
+
+38
+00:02:08,870 --> 00:02:12,620
+What happens at one stage of the distribution is independent of what
+
+39
+00:02:12,620 --> 00:02:14,580
+happens at other stages.
+
+40
+00:02:14,580 --> 00:02:19,010
+Consider, for example, the concentration of a drug, and let's
+
+41
+00:02:19,010 --> 00:02:21,890
+assume it's a legal drug, in the human body.
+
+42
+00:02:21,890 --> 00:02:25,870
+We start with some finite number of molecules of the drug.
+
+43
+00:02:25,870 --> 00:02:31,060
+The body's natural instinct is to try and eliminate foreign substances.
+
+44
+00:02:31,060 --> 00:02:37,840
+So let's assume that at each time step each molecule has a probability, p, of
+
+45
+00:02:37,840 --> 00:02:39,020
+being cleared.
+
+46
+00:02:39,020 --> 00:02:41,870
+That is to say, eliminated from the body.
+
+47
+00:02:41,870 --> 00:02:46,060
+The system is memoryless in the sense that at each time step the probability
+
+48
+00:02:46,060 --> 00:02:49,780
+of a molecule being cleared is independent of what happened at
+
+49
+00:02:49,780 --> 00:02:51,540
+previous times.
+
+50
+00:02:51,540 --> 00:02:57,000
+Let's start at time t equals 0, and ask whether a molecule that was in the
+
+51
+00:02:57,000 --> 00:02:59,760
+body at time t equals 0 still is.
+
+52
+00:02:59,760 --> 00:03:03,490
+Well, of course it is, so the probability of that molecule still
+
+53
+00:03:03,490 --> 00:03:07,230
+being there before any time has elapsed is 1.
+
+54
+00:03:07,230 --> 00:03:09,290
+How about time t equals 1?
+
+55
+00:03:09,290 --> 00:03:13,620
+Well, we know that the probability of the molecule being cleared is p, so
+
+56
+00:03:13,620 --> 00:03:18,100
+the probability of it still being in the body has got to be 1 minus p.
+
+57
+00:03:18,100 --> 00:03:23,110
+At t equals 2, the probability of that individual molecule still being there
+
+58
+00:03:23,110 --> 00:03:25,900
+will be 1 minus p squared.
+
+59
+00:03:25,900 --> 00:03:31,690
+And more generally, at time t equals k, it will be 1 minus p to the k.
+
+60
+00:03:31,690 --> 00:03:36,250
+Notice, by the way, that this term could be written as 1 minus p to the
+
+61
+00:03:36,250 --> 00:03:41,630
+1, and this term could even be written as 1 minus p to the 0.
+
+62
+00:03:41,630 --> 00:03:46,680
+So indeed, we see this formula is correct at each time step.
+
+63
+00:03:46,680 --> 00:03:53,040
+Now let's suppose that at time t equals 0, there m 0 molecules in the
+
+64
+00:03:53,040 --> 00:03:55,140
+body to start with.
+
+65
+00:03:55,140 --> 00:04:01,130
+In general, at time t, the number of molecules still in the body will be m
+
+66
+00:04:01,130 --> 00:04:05,150
+sub 0 multiplied what?
+
+67
+00:04:05,150 --> 00:04:09,215
+By the probability that an individual molecule has survived.
+
+68
+00:04:13,850 --> 00:04:17,380
+And that is the probability we just looked at.
+
+69
+00:04:17,380 --> 00:04:20,950
+Let's look at some code that implements this to compute how many
+
+70
+00:04:20,950 --> 00:04:25,300
+molecules are likely to be in the body at any point in time.
+
+71
+00:04:25,300 --> 00:04:27,980
+The function clear has three arguments--
+
+72
+00:04:27,980 --> 00:04:34,910
+n, the initial number of molecules, the probability of a molecule being
+
+73
+00:04:34,910 --> 00:04:37,750
+clear at each step, and the number of steps.
+
+74
+00:04:37,750 --> 00:04:42,320
+We start by initialize numRemaining to n, so at time t equals
+
+75
+00:04:42,320 --> 00:04:44,530
+0, there are n molecules.
+
+76
+00:04:44,530 --> 00:04:50,760
+Then for each step, we append to numRemaining the value of the formula
+
+77
+00:04:50,760 --> 00:04:52,240
+we just looked at.
+
+78
+00:04:52,240 --> 00:04:55,570
+And then when we're done, we just plot it all.
+
+79
+00:04:55,570 --> 00:04:58,135
+We can now look at the code in the code window.
+
+80
+00:04:58,135 --> 00:05:01,900
+It looks like I've added labels for the x- and y-axes,
+
+81
+00:05:01,900 --> 00:05:04,360
+that's a good thing.
+
+82
+00:05:04,360 --> 00:05:09,050
+Now let's run it for 1,000 initial molecules, clearance probability of
+
+83
+00:05:09,050 --> 00:05:13,150
+0.01, and 500 steps.
+
+84
+00:05:13,150 --> 00:05:17,400
+Well, we get this rather elegant exponential graph.
+
+85
+00:05:17,400 --> 00:05:20,180
+This is an example of exponential decay.
+
+86
+00:05:20,180 --> 00:05:24,310
+In practice, exponential decay is often talked
+
+87
+00:05:24,310 --> 00:05:27,380
+about in terms of half-life.
+
+88
+00:05:27,380 --> 00:05:31,250
+Half-life is the expected time required for the initial value to
+
+89
+00:05:31,250 --> 00:05:33,100
+decay by 50%.
+
+90
+00:05:33,100 --> 00:05:37,520
+For example, the half-life of a single radioactive atom is a time at which
+
+91
+00:05:37,520 --> 00:05:42,020
+the probability of that atom having decayed is 0.5.
+
+92
+00:05:42,020 --> 00:05:47,700
+What you think will happen if I go back to the code and make the y-axis
+
+93
+00:05:47,700 --> 00:05:48,950
+logarithmic?
+
+94
+00:05:52,070 --> 00:05:57,980
+Well, that beautiful exponential decay has been replaced by a straight line.
+
+95
+00:05:57,980 --> 00:05:59,325
+Are you surprised?
+
+96
+00:05:59,325 --> 00:06:04,530
+Well, you shouldn't be, because recall that the values in the y-axis were
+
+97
+00:06:04,530 --> 00:06:06,400
+changing at an exponential rate.
+
+98
+00:06:06,400 --> 00:06:08,860
+That's why it's exponential decay.
+
+99
+00:06:08,860 --> 00:06:14,640
+And when we make the y-axis logarithmic, the labels on the y-axis
+
+100
+00:06:14,640 --> 00:06:18,270
+are now also changing at an exponential rate, hence
+
+101
+00:06:18,270 --> 00:06:20,380
+the straight line.
+
+102
+00:06:20,380 --> 00:06:25,110
+This is one way to check, by the way, if distributions are exponential.
+
+103
+00:06:25,110 --> 00:06:30,880
+Notice, by the way, that this code is not a Monte Carlo simulation.
+
+104
+00:06:30,880 --> 00:06:35,840
+Even though I'm using a probability in this statement, there is no randomness
+
+105
+00:06:35,840 --> 00:06:37,130
+in this code.
+
+106
+00:06:37,130 --> 00:06:41,615
+Suppose I want to write a Monte Carlo simulation to test the same thing.
+
+107
+00:06:41,615 --> 00:06:43,830
+Well, let's go look at that.
+
+108
+00:06:43,830 --> 00:06:48,380
+ClearSim takes the same three arguments as clear, and again, begins
+
+109
+00:06:48,380 --> 00:06:52,820
+by initializing numRemaining in the same way, and iterating
+
+110
+00:06:52,820 --> 00:06:54,390
+through each step.
+
+111
+00:06:54,390 --> 00:06:59,990
+For each step, it looks at each molecule, m, and either clears it or
+
+112
+00:06:59,990 --> 00:07:04,530
+not, depending upon whether random.random returns a value less
+
+113
+00:07:04,530 --> 00:07:07,150
+than, or equal to the clear probability.
+
+114
+00:07:07,150 --> 00:07:09,650
+Then when it's done, it plots it.
+
+115
+00:07:09,650 --> 00:07:14,880
+The code down here first runs clear, and then clearSim, so we'll now see in
+
+116
+00:07:14,880 --> 00:07:21,820
+a single plot the results of both ways of computing the exponential decay.
+
+117
+00:07:21,820 --> 00:07:26,520
+Notice that these two approaches give us almost identical curves.
+
+118
+00:07:26,520 --> 00:07:27,650
+That's a good thing.
+
+119
+00:07:27,650 --> 00:07:29,920
+I would have been worried if they hadn't.
+
+120
+00:07:29,920 --> 00:07:32,900
+I also would have been worried, by the way, if they'd been identical since,
+
+121
+00:07:32,900 --> 00:07:35,890
+for one, the simulation, there is some randomness.
+
+122
+00:07:35,890 --> 00:07:40,880
+So I wouldn't expect it to exactly track the initial values, the
+
+123
+00:07:40,880 --> 00:07:43,690
+theoretical values given by the blue curve.
+
+124
+00:07:43,690 --> 00:07:47,850
+And in particular, as the numbers get smaller as we've gone through more
+
+125
+00:07:47,850 --> 00:07:52,790
+steps, I might expect more divergence because the law of large numbers would
+
+126
+00:07:52,790 --> 00:07:54,520
+no longer be applicable.
+
+127
+00:07:54,520 --> 00:07:57,580
+So to get a precise answer, it's better to calculate it from the
+
+128
+00:07:57,580 --> 00:07:58,870
+probabilities.
+
+129
+00:07:58,870 --> 00:08:02,550
+On the other hand, the simulation does have some value.
+
+130
+00:08:02,550 --> 00:08:06,050
+Suppose, for example, I want to change it a little bit.
+
+131
+00:08:06,050 --> 00:08:08,800
+In fact, let's do something a little bit strange.
+
+132
+00:08:08,800 --> 00:08:12,860
+Let's assume that this drug is maybe not a drug, but say,
+
+133
+00:08:12,860 --> 00:08:14,800
+a virus or a bacteria.
+
+134
+00:08:14,800 --> 00:08:18,860
+Some kind of life form that can reproduce itself.
+
+135
+00:08:18,860 --> 00:08:23,260
+And so let's modify this simulation to account for the fact that every 100
+
+136
+00:08:23,260 --> 00:08:27,840
+steps, each of the surviving molecules clones itself.
+
+137
+00:08:27,840 --> 00:08:29,520
+It can do that quite easily.
+
+138
+00:08:29,520 --> 00:08:31,720
+Let's put the code in here.
+
+139
+00:08:31,720 --> 00:08:36,510
+If we're not at the first step, and the step we're at is evenly divisible
+
+140
+00:08:36,510 --> 00:08:45,000
+by 100, we'll change the number of molecules left to be doubled, numLeft
+
+141
+00:08:45,000 --> 00:08:47,240
+plus equal numLeft.
+
+142
+00:08:47,240 --> 00:08:50,440
+And then we'll go off and see what we get there.
+
+143
+00:08:50,440 --> 00:08:55,460
+Well, here we see that the blue curve is, of course, unchanged, but the red
+
+144
+00:08:55,460 --> 00:08:59,260
+curves, the simulation, is rather strange.
+
+145
+00:08:59,260 --> 00:09:05,150
+It drops down until it reaches 100 steps, then it jumps up, drops down.
+
+146
+00:09:05,150 --> 00:09:09,150
+But we see that it gets smaller and smaller, and we are getting ragged
+
+147
+00:09:09,150 --> 00:09:14,390
+decay, but effectively, it is still dropping exponentially.
+
+148
+00:09:14,390 --> 00:09:18,130
+Kind of the fun thing you can do with simulations is try different kinds of
+
+149
+00:09:18,130 --> 00:09:20,230
+experiments.
+
+150
+00:09:20,230 --> 00:09:23,550
+Exponential growth is the inverse of exponential decay.
+
+151
+00:09:23,550 --> 00:09:26,740
+It, too, is quite commonly seen in nature.
+
+152
+00:09:26,740 --> 00:09:31,330
+Compound interest is an example of exponential growth, as is the growth
+
+153
+00:09:31,330 --> 00:09:34,270
+of algae in a pond or a swimming pool.
+
+154
+00:09:34,270 --> 00:09:39,350
+And the power of an atomic bomb is based upon the fact that the energy
+
+155
+00:09:39,350 --> 00:09:40,600
+grows exponentially.
+
